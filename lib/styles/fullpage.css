@@ -24,6 +24,7 @@ html.fp-enabled,
   -moz-box-sizing: border-box;
   /* <=28 */
   box-sizing: border-box;
+  /* z-index: -1; */
 }
 
 .fp-slide {

@@ -15,14 +15,23 @@
 
   <!-- External -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js" integrity="sha256-caNcSA0LvOCX90PTuEbwl+V09xPMca13CJUasl+VCtk=" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js" integrity="sha256-caNcSA0LvOCX90PTuEbwl+V09xPMca13CJUasl+VCtk=" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.extensions.min.js" integrity="sha256-pwVO9xs/zTEUDEzK1G4AbAAZbAzmU30SniNu2b9O0UY=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js" integrity="sha256-6EA3edRalZC0PA7PmE6+Eedf0pgmMNZYOQpgAaZ2h3A=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../lib/styles/glide.core.min.css" />
+  <link rel="stylesheet" href="../lib/styles/glide.theme.min.css" />
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Modak&family=Raleway:wght@500&family=Roboto:wght@300;400&display=swap">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js" integrity="sha256-CnNQJd80jPuIDyeQRRq7+Wgt+++Kl0dZLt4ETNmxMIw=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Modak&family=Raleway:wght@500&family=Roboto:wght@300;400;500;700&family=Qwigley&family=Parisienne&family=Allura&display=swap">
 
   <!-- Local -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- <link rel="stylesheet" href="../lib/styles/navbar.css" /> -->
+  <link rel="stylesheet" href="../lib/styles/style.css" />
   <link rel="stylesheet" href="../lib/styles/fullpage.css" />
+  <!-- <link rel="stylesheet" href="../lib/bootstrap-iso/bootstrap-iso.css"> -->
+  <link rel="stylesheet" href="../lib/styles/bootstrap-iso.css">
+
 
   <script src="../lib/pt.min.js"></script>
   <script src="../lib/canvas.js"></script>
@@ -30,72 +39,478 @@
 
 
 <body>
+
+  <div class="side_container">
+
+    <a id="github_placeholder" href="https://github.com/JulianBroudy" target="_blank" aria-label="GitHub">
+      <svg id="github_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path class="side_container__logo"
+          d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+      </svg>
+    </a>
+
+
+    <a id="linked_in_placeholder" href="https://www.linkedin.com/in/julianbroude/" target="_blank" aria-label="LinkedIn">
+      <svg id="linked_in_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path class="side_container__logo"
+          d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+      </svg>
+    </a>
+
+    <a id="codepen_placeholder" href="https://codepen.io/JulianBroudy" target="_blank" aria-label="CodePen">
+      <svg id="codepen_logo" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 31.665 31.665">
+        <path class="side_container__logo"
+          d="M16.878,0.415c-0.854-0.565-1.968-0.552-2.809,0.034L1.485,9.214c-0.671,0.468-1.071,1.233-1.071,2.052v9.444 c0,0.84,0.421,1.623,1.122,2.086l12.79,8.455c0.836,0.553,1.922,0.553,2.758,0l13.044-8.618c0.7-0.463,1.122-1.246,1.122-2.086 v-9.279c0-0.839-0.421-1.622-1.121-2.085L16.878,0.415z M26.621,10.645l-4.821,3.237l-4.521-3.288L17.25,4.127L26.621,10.645z M13.979,4.133v6.329l-4.633,3.24l-4.621-3.099L13.979,4.133z M3.458,13.722l2.991,2.004l-2.991,2.093V13.722z M14.058,27.215 l-9.331-6.258l4.661-3.258l4.67,3.133V27.215z M12.286,15.674l3.021-2.113l3.519,2.313l-3.119,2.095L12.286,15.674z M17.354,27.215 V20.83l4.463-2.991l4.805,3.159L17.354,27.215z M27.954,17.927l-3.168-2.082l3.168-2.125V17.927z">
+        </path>
+      </svg>
+    </a>
+
+    <a id="facebook_placeholder" href="https://www.facebook.com/JulianBroude" target="_blank" aria-label="Facebook">
+      <svg id="facebook_logo" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path class="side_container__logo"
+          d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+      </svg>
+    </a>
+
+    <div id="just_a_line">
+
+    </div>
+  </div>
+
+
   <div id="fullpage">
 
-    <div class="section">
-      <!-- <div class="flex"> -->
-      <div class="myWrapper flex">
-        <div id="pt" class="canvas"></div>
-        <div id="fade1" class="welcome-text">
-          Hello, I'm <span class="highlight">Julian Broudy</span>.
+    <div class="section section1">
+
+      <div id="pt" class="canvas"></div>
+
+      <div class="section1__container">
+        <div id="top-quote-bg" class="section1__container__header">
+          <h1 id="top-quote">- As you sow, so shall you reap. -</h1>
         </div>
-        <div id="fade2" class="welcome-text">
-          I'm a software engineering student.
+
+        <div class="section1__container__main-content">
+          <div id="welcome_text-first_line" class="welcome_text">
+            Hello, I'm <span class="highlight">Julian Broudy</span>.
+          </div>
+          <div id="welcome_text-second_line" class="welcome_text">
+            I'm a software engineering student.
+          </div>
+        </div>
+
+        <div class="section1__container__footer">
+          <a href="#aboutMe" id="go_to_2nd_page" class="bttn-dark">Tell me more!<span></span></a>
+          <!-- <a id="view-my-work" href="#" data-title="I'm intrigued"></a> -->
         </div>
       </div>
-      <div class="button">
-        View my work
+
+    </div>
+
+
+
+
+    <div class="section section2">
+      <div class="section2__container">
+
+        <div class="section2__container__title">
+          <h1 class="title_3d">About Me</h1>
+        </div>
+        <div class="section2__container__main">
+          <P>
+            I am transparent 😇, ambitious and extremely curious.<br>
+            I love the process of realizing a well devised plan 😈. Especially, when the end-result helps someone. Better yet, if it contributes to humanity... On an EXISTENTIAL level! Oh, the drama. So fun 🙃.</p>
+          <p>
+            <b><u>Why?</u></b> 🤔<br>
+            Well, imagining the "impossible" and seeing it through, overcoming obstacles, making extraordinary relationships, the exploration, the knowledge one gains. What's not to love?</p>
+          <p>
+            I am a software engineering student in my penultimate year and <b>I am looking for</b> a place where I can leverage my creative thinking, imaginitive mind and can-do attitude to help our DOOMED humanity. THE END 🤪.
+          </p>
+        </div>
+
       </div>
     </div>
-    <!-- </div> -->
+
+    <div class="section section3">
+      <div class="section3__container">
+
+        <div class="section3__container__title">
+          <h1 class="title_3d">Projects</h1>
+        </div>
+        <div class="section3__container__main">
+          <div id="projects_wrapper" class="glide">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide">
+                  <div class="project_showcase">
+                    <div class="pr_pic">
+                      <img src="../lib/images/gcm-system.png" alt="">
+
+                    </div>
+                    <div class="pr_heading">
+                      <div class="pr_title">GCM System</div>
+                      <a class="pr_ex_link" href="https://github.com/JulianBroudy/gcm-system#gcm-system---a-maps-editor--store" target="_blank" aria-label="GitHub">
+                        <svg class="pr_ex_link_svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                          <path class="pr_ex_link_logo" d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" /></svg>
+                      </a>
+                    </div>
+                    <div class="pr_descr">
+                      A full-stack UX focused JavaFX application for world maps' marketing.<br>
+                      The application supports both the buyers and the company's employees.<br>
+                      i.e., it offers the options to create new maps or edit existing ones. Supports authorization requests and approvals. Allows clients to browse, purchase, subscribe and download default views or customized map views (e.g.,
+                      specific tours, sites, etc...).
+                    </div>
+                    <div class="pr_techn">
+                      <div>
+                        <p>Eclipse</p>
+                      </div>
+                      <div>
+                        <p>Maven</p>
+                      </div>
+                      <div>
+                        <p>Guice</p>
+                      </div>
+                      <div>
+                        <p>JavaFX</p>
+                      </div>
+                      <div>
+                        <p>CSS</p>
+                      </div>
+                      <div>
+                        <p>FXMLs</p>
+                      </div>
+                      <div>
+                        <p>MySQL</p>
+                      </div>
+                      <div>
+                        <p>GitHub VCS</p>
+                      </div>
+                      <div class="special">
+                        <p>Multi-modular</p>
+                      </div>
+                      <div class="special">
+                        <p>Multi-threaded</p>
+                      </div>
+                    </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="project_showcase">
+                    <div class="pr_pic">
+                      <img src="../lib/images/skedaddle.png" alt="">
+
+                    </div>
+                    <div class="pr_heading">
+                      <div class="pr_title">Skedaddle</div>
+                      <a class="pr_ex_link" href="https://github.com/JulianBroudy/skedaddle#skedaddle" target="_blank" aria-label="GitHub">
+                        <svg class="pr_ex_link_svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                          <path class="pr_ex_link_logo" d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" /></svg>
+                      </a>
+                    </div>
+                    <div class="pr_descr">
+                      A minimalistic UI puzzle game, inspired by "15-puzzle".<br>
+                      With the intention of exploring JavaFX's capabilities, I found myself hooked into my computer unable to do anything else.<br>
+                      The game currently supports2 game modes: picture mode (upload or default) & regular mode.<br> The game is full of animations and neat effects.<br> Click the icon next to the title to see some HQ Gif samples.
+                    </div>
+                    <div class="pr_techn">
+                      <div>
+                        <p>IntelliJ Idea</p>
+                      </div>
+                      <div>
+                        <p>Gradle</p>
+                      </div>
+                      <div>
+                        <p>JavaFX</p>
+                      </div>
+                      <div>
+                        <p>Scene Builder</p>
+                      </div>
+                      <div>
+                        <p>Git</p>
+                      </div>
+                      <div class="special">
+                        <p>MVC </p>
+                      </div>
+                    </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="project_showcase">
+                    <div class="pr_pic">
+                      <img src="../lib/images/broude.png" alt="">
+
+                    </div>
+                    <div class="pr_heading">
+                      <div class="pr_title">Broude.co.il</div>
+                      <a class="pr_ex_link" href="http://broude.co.il/#home" target="_blank" aria-label="GitHub">
+                        <svg class="pr_ex_link_svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                          <path class="pr_ex_link_logo" d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" /></svg>
+                      </a>
+                    </div>
+                    <div class="pr_descr">
+                      I was curious about the web development processes.<br>
+                      Also, I like exploring. Whether it is CS-related or not.<br>
+                      So I figured I got nothing to lose. Here I am after a couple of weeks, got a pretty nice website as well as a peek as to what goes into making one.<br>
+                      Clearly, I have seen a tiny fraction of the tools and techniques available today. Nonetheless, I got a rough idea how things are, how they should be done, and another "project" to show. Neat huh :)?
+                    </div>
+                    <div class="pr_techn">
+                      <div>
+                        <p>Html</p>
+                      </div>
+                      <div>
+                        <p>JavaScript</p>
+                      </div>
+                      <div>
+                        <p>CSS</p>
+                      </div>
+                      <div>
+                        <p>PHP</p>
+                      </div>
+
+                      <div>
+                        <p>WinSCP</p>
+                      </div>
+                      <div class="special">
+                        <p>GSAP</p>
+                      </div>
+                      <div class="special">
+                        <p>Fullpage.js</p>
+                      </div>
+                      <div class="special">
+                        <p>Pt.js</p>
+                      </div>
+                    </div>
+                </li>
+              </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+              <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+              <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="section3__container__footer"> <small>&copy;2020 Julian Broudy</small>
+        </div> -->
+
+      </div>
+    </div>
+
+
+    <div class="section section4">
+      <div class="section4__container">
+
+        <div class="section4__container__title">
+          <h1 class="title_3d">Say Hi!</h1>
+        </div>
+        <div class="section4__container__main">
+
+          <form id="contact_form" method="post" name="myemailform" action="form-to-email.php">
+
+            <div class="email_area">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email">
+            </div>
+            <div class="subject_area">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option selected disabled>Optional</option>
+                <option value="resume_request">Resume Request</option>
+                <option value="collaboration_proposition">Collaboration Proposition</option>
+                <option value="just_hi">Just saying hello!</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="message_area">
+              <label for="message">Message</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+            <div class="submit_area">
+              <input type="submit" class="send_message_btn" value="Send">
+            </div>
+
+          </form>
+        </div>
+        <div class="section4__container__footer"> <small>&copy;2020 Julian Broudy</small>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
-  <div class="section">Some section</div>
-  <div class="section">Some section</div>
-  <div class="section">Some section</div>
+
+  <div class="bootstrap-iso ">
+
+    <!-- Navigation Bar -->
+    <nav id="myNavbar" class="navbar hidden navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="container">
+        <!-- Menu responsivo -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <!-- Logo -->
+          <a class="navbar-brand myLogo" href="#home">Julian<span>Broudy</span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="nav navbar-nav navbar-right shadow-none">
+            <li><a id="home-link" href="#home">Home</a></li>
+            <li><a id="aboutMe-link" href="#aboutMe">About</a></li>
+            <li><a id="myProjects-link" href="#myProjects">Projects</a></li>
+            <li><a id="contactMe-link" href="#contactMe">Say Hi</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
   </div>
 
 
 
-  <!-- ABOUT -->
-
-
-  <!-- PORTFOLIO -->
-
-
-  <!-- BLOG -->
-
-
-  <!-- CONTACT -->
-
-
-  <!-- </div> -->
   <script type="text/javascript">
+    const nav = document.querySelector("#myNavbar");
+
+    let tmsm = gsap.timeline();
+    tmsm.fromTo("#myNavbar", {
+      opacity: 0,
+      xPercent: 100,
+      y: 0,
+      scale: 0,
+    }, {
+      duration: 1.2,
+      scale: 1,
+      opacity: 0.7,
+      xPercent: 0,
+      ease: "elastic.out(1, 0.75)"
+    });
+    let timeline2 = gsap.timeline();
+    timeline2.to("#myNavbar", {
+      opacity: 0,
+      // y: window.innerHeight,
+      xPercent: 100,
+      scale: 0,
+      duration: 1.2,
+    }, {
+      onComplete: function() {
+        if (!nav.classList.contains('hidden')) {
+          nav.classList.add('hidden');
+        }
+      }
+    });
     new fullpage('#fullpage', {
-      sectionsColor: ['yellow', 'orange', '#C0C0C0'],
+      anchors: ['home', 'aboutMe', 'myProjects', 'contactMe'],
+      onLeave: function(origin, destination, direction) {
+
+        if (destination.index == 0 && direction == 'up') {
+          homePageShowing = true;
+          if (tmsm.isActive()) {
+            tmsm.pause();
+          }
+          timeline2.restart();
+          timeline.play();
+        }
+
+        if (origin.anchor == "home" && destination.anchor != "home") {
+          timeline.pause();
+          homePageShowing = false;
+        }
+
+        switch (destination.anchor) {
+          case "home": {
+            switchActiveLinkTo(homeLink);
+            break;
+          }
+          case "aboutMe": {
+            switchActiveLinkTo(aboutMeLink);
+            break;
+          }
+          case "myProjects": {
+            switchActiveLinkTo(myProjectsLink);
+            break;
+          }
+          case "contactMe": {
+            switchActiveLinkTo(contactMeLink);
+            break;
+          }
+        }
+
+      },
+      afterLoad: function(origin, destination, direction) {
+        if (origin.index == 0 && direction == 'down') {
+          if (nav.classList.contains('hidden')) {
+            nav.classList.remove('hidden');
+          }
+          tmsm.restart();
+        }
+
+        if (destination.anchor == "home" && origin.anchor != "home") {
+          homePageShowing = true;
+          if (needsRestart) {
+            needsRestart = false;
+            timeline.restart();
+          } else if (!timeline.isActive()) {
+            timeline.play();
+          }
+        }
+
+      },
+      // sectionsColor: ['transparent', 'whitesmoke', '#C0C0C0'],
       responsiveHeight: 0,
-      // autoScrolling:true
+      autoScrolling: true,
+      scrollHorizontally: true,
+
       // scrollHorizontally: true
       // showActiveTooltip: true
-      // dragAndMove: true,
+      dragAndMove: true,
       fadingEffect: true,
+      // fadingEffectKey: 'C!23WKA!h2',
+      // cards: true,
+      // cardsOptions: {perspective: 100, fadeContent: false, fadeBackground: false},
       // animateAnchor: true,
       controlArrows: true,
       // responsiveWidth: 0,
       // responsiveHeight: 0,
-
+      // navigarion: true,
       scrollingSpeed: 1200,
-      licenseKey: null
+      licenseKey: 'C!23WKA!h2'
     });
-    //methods
-    // fullpage_api.setAllowScrolling(true);
+    // fullpage_api.setAllowScrolling(false);
+    // fullpage_api.setKeyboardScrolling(false);
   </script>
 </body>
 
 </html>
-<script src="../lib/animations.js"></script>
 
+<!-- <script src="../lib/CustomEase.min.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript">
+  new Glide('.glide', {
+    type: 'carousel',
+    startAt: 1,
+    perView: 1,
+    focusAt: true,
+    // autoplay: 5000,
+    // gap: 50,
+    hoverpause: true,
+    bound: true,
+    perTouch: 1,
+    animationTimingFunc: 'ease-in',
+    // peek: {
+    //   before: 70,
+    //   after: 70
+    // }
+  }).mount();
+</script>
+<script src="../lib/index.js"></script>
+
+<!-- <script src="../lib/myBTN.js"></script> -->
+<!-- #2f3542 -->
+<!--   background: linear-gradient(135deg, #5cd3ad, #f5c156, #e6616b, #C678DD);
+ -->
 <!-- <script src="pts.min.js"></script> -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pts/0.9.1/pts.min.js" integrity="sha256-o4v1wwVNBApVAVJsAtRp4/1prH5uH+5ghfhY9TFs3CI=" crossorigin="anonymous"></script> -->
 <!-- <script src="canvas.js"></script> -->
