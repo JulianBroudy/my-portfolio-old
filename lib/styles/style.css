@@ -386,10 +386,10 @@ a.bttn-dark:focus {
   font-weight: bold;
   font-family: "Roboto";
   padding: 1.05rem 0;
-  border: 0.4rem solid #f8f8ff;
+  /* border: 0.4rem solid #f8f8ff; */
   border-radius: auto;
   position: relative;
-  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.16), 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.16), 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1); */
   z-index: 2;
 }
 
@@ -420,18 +420,20 @@ a.bttn-dark:focus {
   content: "";
   position: absolute;
   background-color: #f8f8ff;
+  /* background-color: transparent; */
   transition: 0.5s ease;
-  height: 0.2rem;
-  width: 101%;
+  height: 0.3rem;
+  /* width: 101%; */
+  width: 100%;
   left: -2px;
 }
 
 .bttn-dark span::after {
-  top: -0.3rem;
+  top: -1.5rem;
 }
 
 .bttn-dark span::before {
-  bottom: -0.3rem;
+  bottom: -1.5rem;
 }
 
 .bttn-dark:active {
@@ -439,11 +441,11 @@ a.bttn-dark:focus {
 }
 
 .bttn-dark:active span::after {
-  top: -1rem;
+  top: -4rem;
 }
 
 .bttn-dark:active span::before {
-  bottom: -1rem;
+  bottom: -4rem;
 }
 
 .bttn-dark:focus span::after {
