@@ -15,6 +15,8 @@ html {
   scroll-behavior: smooth;
   overflow: scroll;
   overflow-x: hidden;
+  /* width: 100%;
+  height: 100%; */
   /* font-size: 1.5vh; */
   font-size: 10px;
   line-height: 15px;
@@ -466,27 +468,6 @@ a.bttn-dark:focus {
   background: transparent;
 }
 
-/* Section 2 */
-/* .section2__container{
-  padding: 10%;
-  flex: 1 1 80%;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #5cd3ad, #f5c156, #e6616b, #C678DD);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-} */
 /***
  *      ___
  *     |__ \
@@ -704,13 +685,14 @@ a.bttn-dark:focus {
     "slider"
     "arrows";
   /* overflow: hidden; */
+  /* background: red;   */
   justify-content: space-between;
   width: 100%;
   height: 100%;
   align-items: center;
   /* bottom:0; */
-  overflow-y: scroll;
-  overflow: visible;
+  /* overflow-y: scroll; */
+  /* overflow: visible; */
 }
 
 .glide__track {
@@ -725,12 +707,18 @@ a.bttn-dark:focus {
 
 .glide__arrow--left {
   left: auto;
-  right: 60%;
+  right: 65%;
 }
 
 .glide__arrow--right {
   right: auto;
-  left: 60%;
+  left: 65%;
+}
+
+.glide__bullets {
+  grid-area: arrows;
+  /* position: relative; */
+  /* justify-content: center; */
 }
 
 .project_showcase {
@@ -1212,6 +1200,16 @@ a.bttn-dark:focus {
   .pr_techno {
     grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
   }
+
+  .glide__arrow--left {
+    right: auto;
+    left: 5%;
+  }
+
+  .glide__arrow--right {
+    left: auto;
+    right: 5%;
+  }
 }
 
 @media (max-width:540px) {
@@ -1252,6 +1250,19 @@ a.bttn-dark:focus {
 
   .pr_techn div {
     font-size: 1rem;
+  }
+
+  /*
+  .glide__arrow--left {
+    right: 70%;
+  }
+
+  .glide__arrow--right {
+    left: 70%;
+  } */
+  .glide__bullet {
+    width: 6px;
+    height: 6px;
   }
 }
 

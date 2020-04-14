@@ -39,9 +39,10 @@
 }
 
 .glide__bullets {
+  /* background: yellow; */
   position: absolute;
   z-index: 2;
-  bottom: 2em;
+  /* bottom: 2em; */
   left: 50%;
   display: inline-flex;
   list-style: none;
@@ -49,6 +50,7 @@
 }
 
 .glide__bullet {
+	  top: 50%;
   background-color: rgba(255, 255, 255, 0.5);
   width: 9px;
   height: 9px;

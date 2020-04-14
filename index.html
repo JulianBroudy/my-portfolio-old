@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="author" content="Julian Broudy">
   <title>Julian Broudy</title>
@@ -33,7 +33,18 @@
 
 
 <body>
+  <script type="text/javascript">
+  		let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  		if (isMobile) {
+        let head = document.getElementsByTagName('head')[0];
 
+        let style = document.createElement('link');
+        style.href = "../lib/styles/mobile_style.css";
+        style.type = 'text/css';
+        style.rel = 'stylesheet';
+        head.append(style);
+  		}
+  	</script>
   <div class="side_container">
 
     <a id="github_placeholder" href="https://github.com/JulianBroudy" target="_blank" aria-label="GitHub">
@@ -88,7 +99,7 @@
             Hello, I'm <span class="highlight">Julian Broudy</span>.
           </div>
           <div id="welcome_text-second_line" class="welcome_text">
-            I'm a software engineering student.
+            I'm a soon to be software engineer.
           </div>
         </div>
 
@@ -114,7 +125,7 @@
             <b><u>Why?</u></b> 🤔<br>
             Well, imagining the "impossible" and seeing it through, overcoming obstacles, making extraordinary relationships, the exploration, the knowledge one gains. What's not to love?</p>
           <p>
-            I am a software engineering student in my penultimate year and <b>I am looking for</b> a place where I can leverage my creative thinking, imaginitive mind and can-do attitude to help our DOOMED humanity. THE END 🤪.
+            I am senior and <b>I am looking for</b> a place where I can leverage my creative thinking, imaginitive mind and can-do attitude to help our DOOMED humanity. THE END 🤪.
           </p>
         </div>
 
@@ -182,6 +193,7 @@
                         <p>Multi-threaded</p>
                       </div>
                     </div>
+                  </div>
                 </li>
                 <li class="glide__slide">
                   <div class="project_showcase">
@@ -221,6 +233,7 @@
                         <p>MVC </p>
                       </div>
                     </div>
+                  </div>
                 </li>
                 <li class="glide__slide">
                   <div class="project_showcase">
@@ -254,7 +267,6 @@
                       <div>
                         <p>PHP</p>
                       </div>
-
                       <div>
                         <p>WinSCP</p>
                       </div>
@@ -268,8 +280,14 @@
                         <p>Pt.js</p>
                       </div>
                     </div>
+                  </div>
                 </li>
               </ul>
+            </div>
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+              <button class="glide__bullet" data-glide-dir="=0"></button>
+              <button class="glide__bullet" data-glide-dir="=1"></button>
+              <button class="glide__bullet" data-glide-dir="=2"></button>
             </div>
             <div class="glide__arrows" data-glide-el="controls">
               <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
@@ -289,7 +307,7 @@
         </div>
         <div class="section4__container__main">
 
-          <form id="contact_form" method="post" name="myemailform" action="form-to-email.php">
+          <form id="contact_form" method="post" name="myemailform" action="../lib/form-to-email.php">
 
             <div class="email_area">
               <label for="email">Email</label>
@@ -311,7 +329,7 @@
               <textarea id="message" name="message"></textarea>
             </div>
             <div class="submit_area">
-              <input type="submit" class="send_message_btn" value="Send">
+              <input type="submit" class="send_message_btn" name='submit' value="submit">
             </div>
 
           </form>

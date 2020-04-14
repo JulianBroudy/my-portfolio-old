@@ -1,0 +1,11 @@
+.canvas {
+  height: calc(100vh - 56px);
+}
+
+.section1__container {
+  height: calc(100vh - 56px);
+}
+
+.section2__container, .section3__container, .section4__container {
+  height: calc(100vh - 50.75px - 56px);
+}
