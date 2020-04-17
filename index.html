@@ -103,6 +103,15 @@
     </div>
   </div>
 
+  <div id="loading-spinner" class="loadingio-spinner-cube">
+    <div class="ldio">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
 
   <div id="fullpage">
 
@@ -417,8 +426,9 @@
       opacity: 0,
       xPercent: 100,
       scale: 0,
-      duration: 1.2,
     }, {
+      duration: 1.5,
+
       onComplete: function() {
         if (!nav.classList.contains('hidden')) {
           nav.classList.add('hidden');
@@ -428,6 +438,9 @@
     new fullpage('#fullpage', {
       anchors: ['home', 'aboutMe', 'myProjects', 'contactMe'],
       onLeave: function(origin, destination, direction) {
+
+        leavingSection = true;
+        scrollingDirection = direction == 'down'? 1 : -1;
 
         if (destination.index == 0 && direction == 'up') {
           homePageShowing = true;
@@ -464,6 +477,10 @@
 
       },
       afterLoad: function(origin, destination, direction) {
+
+        leavingSection = false;
+
+
         if (origin.index == 0 && direction == 'down') {
           if (nav.classList.contains('hidden')) {
             nav.classList.remove('hidden');
@@ -484,12 +501,13 @@
       },
       // sectionsColor: ['transparent', 'whitesmoke', '#C0C0C0'],
       responsiveHeight: 0,
-      autoScrolling: true,
-      scrollHorizontally: true,
+      // autoScrolling: false,
+      scrollBar:true,
+      // scrollHorizontally: true,
       // scrollHorizontally: true
       // showActiveTooltip: true
       dragAndMove: true,
-      fadingEffect: true,
+      // fadingEffect: true,
       // fadingEffectKey: 'C!23WKA!h2',
       // cards: true,
       // cardsOptions: {perspective: 100, fadeContent: false, fadeBackground: false},
@@ -498,7 +516,7 @@
       // responsiveWidth: 0,
       // responsiveHeight: 0,
       // navigarion: true,
-      scrollingSpeed: 1200,
+      // scrollingSpeed: 1200,
       licenseKey: 'C!23WKA!h2'
     });
     // fullpage_api.setAllowScrolling(false);
