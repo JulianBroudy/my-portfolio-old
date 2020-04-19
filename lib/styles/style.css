@@ -284,6 +284,119 @@ body {
 /*  */
 /*  */
 /*  */
+/*  */
+.controls_container {
+  position: fixed;
+  display: grid;
+  background: red;
+  right: 0;
+  top: 0;
+  /* height: 40vh; */
+  width: 10rem;
+  /* top: 0; */
+  /* right: 0; */
+  bottom: 0;
+  /* grid-template-rows: auto auto auto; */
+  grid-template-areas:
+    "speed_controls"
+    "plane_controls"
+    "center_controls";
+  align-items: center;
+  /* justify-items: center; */
+  /* align-content: center; */
+  /* justify-content: center; */
+  z-index: 5;
+  /* cursor: pointer; */
+  pointer-events: none;
+}
+
+.speed_controls {
+  grid-area: speed_controls;
+  fill: rgba(255, 255, 255, 0.7);
+  display: grid;
+  grid-template-areas:
+    "speed_text speed_text"
+    "speed_dec speed_inc";
+  /* justify-content: space-between; */
+  /* justify-content: center; */
+  justify-items: center;
+  background: grey;
+}
+
+.speed_text {
+  grid-area: speed_text;
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+  /* justify-content: center; */
+  font-size: 2rem;
+  font-weight: bold;
+  /* height: min-content; */
+}
+
+.decrease_speed {
+  grid-area: speed_dec;
+  pointer-events: all;
+}
+
+.decrease_speed svg:hover {
+  fill: #e6616b;
+}
+
+.increase_speed {
+  grid-area: speed_inc;
+  pointer-events: all;
+}
+
+.increase_speed svg:hover {
+  fill: #5cd3ad;
+}
+
+.plane_controls {
+  grid-area: plane_controls;
+  background: blue;
+  fill: rgba(255, 255, 255, 0.7);
+  display: grid;
+  grid-template-areas:
+    "plane_text"
+    "xy_plane"
+    "yz_plane"
+    "xz_plane";
+  /* justify-content: space-between; */
+  /* justify-content: center; */
+  justify-items: center;
+}
+
+.plane_text {
+  grid-area: plane_text;
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+  /* justify-content: center; */
+  font-size: 2rem;
+  font-weight: bold;
+  /* height: min-content; */
+}
+
+.xy_plane {
+  grid-area: xy_plane;
+  display: flex;
+}
+
+.yz_plane {
+  grid-area: yz_plane;
+}
+
+.xz_plane {
+  grid-area: xz_plane;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 @keyframes ldio {
   0% {
     transform: scale(2)
@@ -301,7 +414,7 @@ body {
   top: 22px;
   left: 22px;
   background: #5cd3ad;
-  animation: ldio 1s cubic-bezier(.17,.67,.83,.67) infinite;
+  animation: ldio 1s cubic-bezier(.17, .67, .83, .67) infinite;
   animation-delay: -0.3s;
   /* animation-play-state: inherit; */
   /* animation-play-state: inherit; */
@@ -343,7 +456,7 @@ body {
   /* right: 3rem; */
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   /* opacity: 0; */
 }
 
@@ -389,7 +502,7 @@ body {
   /* left: 25% !important; */
   /* bottom:0 !important; */
   /* transform-origin: center; */
-  transform:   scale(4,4);
+  transform: scale(4, 4);
   opacity: 0;
   /* z-index: 3; */
 }
@@ -580,7 +693,6 @@ a.bttn-dark:focus {
   z-index: 4;
   overflow: hidden;
   pointer-events: none;
-
 }
 
 .section2:before {
@@ -714,7 +826,6 @@ a.bttn-dark:focus {
   /* background: linear-gradient(135deg, #2f3542, #2f3542); */
   z-index: 4;
   pointer-events: none;
-
 }
 
 .section3:before {
@@ -1021,7 +1132,6 @@ a.bttn-dark:focus {
   /* background: linear-gradient(135deg, #2f3542, #2f3542); */
   z-index: 3;
   pointer-events: none;
-
 }
 
 .section4:before {
@@ -1082,7 +1192,6 @@ a.bttn-dark:focus {
   max-width: 80vw;
   z-index: 5;
   /* pointer-events: none; */
-
 }
 
 #contact_form {
@@ -1105,7 +1214,7 @@ a.bttn-dark:focus {
     0 4px 4px rgba(47, 53, 66, 0.15),
     0 8px 8px rgba(47, 53, 66, 0.10),
     0 16px 16px rgba(47, 53, 66, 0.05);
-    pointer-events: all;
+  pointer-events: all;
 }
 
 #contact_form div label {}

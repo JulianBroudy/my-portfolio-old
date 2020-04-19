@@ -103,6 +103,41 @@
     </div>
   </div>
 
+
+  <div class="controls_container">
+    <div class="speed_controls">
+      <svg class="speed_text" viewBox="0 0 100 30">
+        <text x="50%" y="60%" text-anchor="middle">Speed</text>
+      </svg>
+      <div class="decrease_speed">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7 14h-14v-4h14v4z" /></svg>
+      </div>
+      <div class="increase_speed">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7 14h-5v5h-4v-5h-5v-4h5v-5h4v5h5v4z" /></svg>
+      </div>
+    </div>
+    <div class="plane_controls">
+      <svg class="plane_text" viewBox="0 0 100 30">
+        <text x="50%" y="60%" text-anchor="middle">Plane</text>
+      </svg>
+      <svg class="xy_plane" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path
+          d="M12 0l-11 6v12.131l11 5.869 11-5.869v-12.066l-11-6.065zm7.91 6.646l-7.905 4.218-7.872-4.294 7.862-4.289 7.915 4.365zm-16.91 1.584l8 4.363v8.607l-8-4.268v-8.702zm10 12.97v-8.6l8-4.269v8.6l-8 4.269zm-8-9.601l4 2.182v4.085l-4-2.134v-4.133z" />
+        <text class="xy_plane_text" x=50% y=50% text-anchor="middle">rotate Z</text></svg>
+      <svg class="yz_plane" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path
+          d="M12 0l-11 6v12.131l11 5.869 11-5.869v-12.066l-11-6.065zm7.91 6.646l-7.905 4.218-7.872-4.294 7.862-4.289 7.915 4.365zm-16.91 1.584l8 4.363v8.607l-8-4.268v-8.702zm10 12.97v-8.6l8-4.269v8.6l-8 4.269zm6-9.534v4.066l-4 2.134v-4.066l4-2.134z" />
+        </svg>
+      <svg class="xz_plane" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path
+          d="M12 0l-11 6v12.131l11 5.869 11-5.869v-12.066l-11-6.065zm7.91 6.646l-7.905 4.218-7.872-4.294 7.862-4.289 7.915 4.365zm-16.91 1.584l8 4.363v8.607l-8-4.268v-8.702zm10 12.97v-8.6l8-4.269v8.6l-8 4.269zm-1.01-16.638l3.726 2.055-3.7 1.974-3.706-2.021 3.68-2.008z" />
+        </svg>
+    </div>
+  </div>
+
+
   <div id="loading-spinner" class="loadingio-spinner-cube">
     <div class="ldio">
       <div></div>
@@ -440,7 +475,7 @@
       onLeave: function(origin, destination, direction) {
 
         leavingSection = true;
-        scrollingDirection = direction == 'down'? 1 : -1;
+        scrollingDirection = direction == 'down' ? 1 : -1;
 
         if (destination.index == 0 && direction == 'up') {
           homePageShowing = true;
@@ -501,8 +536,8 @@
       },
       // sectionsColor: ['transparent', 'whitesmoke', '#C0C0C0'],
       responsiveHeight: 0,
-      // autoScrolling: false,
-      scrollBar:true,
+      autoScrolling: true,
+      // scrollBar:true,
       // scrollHorizontally: true,
       // scrollHorizontally: true
       // showActiveTooltip: true
@@ -516,7 +551,7 @@
       // responsiveWidth: 0,
       // responsiveHeight: 0,
       // navigarion: true,
-      // scrollingSpeed: 1200,
+      scrollingSpeed: 1200,
       licenseKey: 'C!23WKA!h2'
     });
     // fullpage_api.setAllowScrolling(false);
