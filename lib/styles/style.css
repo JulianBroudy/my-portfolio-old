@@ -198,7 +198,8 @@ body {
   height: 40vh;
   width: 40px;
   /* top: 0; */
-  right: 40px;
+  /* right: 40px; */
+  left: 40px;
   /* right: 0; */
   bottom: 0;
   /* grid-template-rows: repeat(4, 5rem) 13rem; */
@@ -303,7 +304,7 @@ body {
     0 2px 2px rgba(0, 0, 0, 0.15),
     0 4px 4px rgba(0, 0, 0, 0.15),
     0 8px 8px rgba(0, 0, 0, 0.15);
-
+opacity: 0;
 }
 
 #menu.expanded {
@@ -350,6 +351,10 @@ body {
   grid-area: controls_title;
   font-size: 1.5rem;
   color: whitesmoke;
+  padding-bottom: 4px;
+  border-bottom: #3E4656 inset 3px;
+
+  /* margin-bottom: 2rem; */
 }
 
 #line-2 {
@@ -367,11 +372,11 @@ body {
 
 .menu-grid {
   text-shadow: 0 1px 1px rgba(47, 53, 66, 0.25),
-    0 2px 2px rgba(47, 53, 66, 0.20),
-    0 4px 4px rgba(47, 53, 66, 0.15),
-    0 8px 8px rgba(47, 53, 66, 0.10),
-    0 16px 16px rgba(47, 53, 66, 0.05);
-    transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
+  0 2px 2px rgba(47, 53, 66, 0.20),
+  0 4px 4px rgba(47, 53, 66, 0.15),
+  0 8px 8px rgba(47, 53, 66, 0.10),
+  0 16px 16px rgba(47, 53, 66, 0.05);
+  transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
 
   /* position: relative; */
   margin-left: 1rem;
@@ -382,8 +387,10 @@ body {
   fill: rgba(255, 255, 255, 0.7);
   /* color: rgba(255, 255, 255, 0.7); */
   /* color: #2f3542; */
-  color: #DAD5D8;
+  color: rgba(255, 255, 255, 0.7);
+
   display: grid;
+  /* grid-template-rows: auto repeat(auto-fit, minmax(170px, 1fr)); */
   grid-template-areas:
     "controls_title"
     "controls_speed"
@@ -391,10 +398,14 @@ body {
     "controls_mouse"
     "controls_mouse_depth"
     "controls_not_secret";
-  grid-gap: 3rem;
+  grid-gap: 4rem;
   align-content: space-between;
+  /* align-items: end; */
+  /* justify-content: start; */
 }
-
+.menu-grid div {
+  /* height: max-content; */
+}
 .menu-grid-bg {
   /* background: #2f3542; */
 }
@@ -404,6 +415,8 @@ body {
   font-size: 1.3rem;
   text-align: left;
   font-weight: bolder;
+  text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
+  color: #DAD5D8;
 }
 .speed_controls {
   grid-area: controls_speed;
@@ -485,7 +498,7 @@ body {
   /* text-align: center; */
   /* font-family: "Roboto"; */
   /* font-weight: bold; */
-  color: rgba(255, 255, 255, 0.7);
+  /* color: rgba(255, 255, 255, 0.7); */
   /* font-size: 1.21rem; */
   /* line-height: 1.5em; */
   /* margin-bottom: 0.5rem; */
@@ -707,7 +720,7 @@ body {
 .not_secret {
   position: absolute;
   grid-area: controls_not_secret;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.2rem;
   font-size: 1.25rem;
   bottom: 0;
 }
@@ -814,18 +827,24 @@ body {
 .canvas {
   position: absolute;
   /* height: 100vh; */
-  height: 100vh;
+  /* height: 100vh; */
+  height: 400vh;
   /* height: 400%; */
-  width: 25vw;
+  /* width: 25vw; */
+  width: 100vw;
   /* width: 100vw; */
   top: 0 !important;
   /* top: 50% !important; */
   /* left: 25% !important; */
   /* bottom:0 !important; */
   /* transform-origin: center; */
-  transform: scale(4, 4);
+  /* transform: scale(4, 4); */
+  transition: 3000ms ease-in;
   opacity: 0;
   /* z-index: 3; */
+}
+.canvas-show{
+  opacity: 1;
 }
 
 .section1__container {
