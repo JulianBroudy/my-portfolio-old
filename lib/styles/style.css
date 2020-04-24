@@ -198,7 +198,7 @@ body {
   height: 40vh;
   width: 40px;
   /* top: 0; */
-  left: 40px;
+  right: 40px;
   /* right: 0; */
   bottom: 0;
   /* grid-template-rows: repeat(4, 5rem) 13rem; */
@@ -286,78 +286,147 @@ body {
 /*  */
 /*  */
 /*  */
-.controls_container {
+#menu {
+  height: 100%;
   position: fixed;
-  display: grid;
-  /* background: red; */
-  right: 0;
-  top: 50.75px;
-  /* height: 40vh; */
-  width: 10rem;
-  /* top: 0; */
-  /* right: 0; */
-  bottom: 0;
-  grid-row-gap: 3rem;
-  /* grid-template-rows: auto auto auto; */
-  grid-template-areas:
-    "speed_controls"
-    "plane_controls"
-    "center_controls";
-  /* align-items: start; */
-  /* justify-items: center; */
-  align-content: start;
-
-  /* justify-content: center; */
+  background-color: #4C566B;
+  width: 130px;
+  transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateX(-100%);
+  left: 30px;
+  padding-right: 30px;
+  padding-right: 15px;
+  font-family: "Roboto";
   z-index: 5;
-  /* cursor: pointer; */
-  /* pointer-events: none; */
-}
-
-.controls_container > div{
-  background: rgba(255, 255, 255, 0.5);
-  padding: 5px;
-  border-radius: 13px 2px;
-}
-.controls_container > div:hover{
-  background: rgba(255, 255, 255, 0.8);
+  user-select: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
+    0 2px 2px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.15),
+    0 8px 8px rgba(0, 0, 0, 0.15);
 
 }
 
-.speed_controls {
-  grid-area: speed_controls;
+#menu.expanded {
+  transform: translateX(0%);
+  left: 0px;
+}
+
+.menu-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#blob {
+  top: 0;
+  z-index: -1;
+  right: 60px;
+  transform: translateX(100%);
+  height: 100%;
+  position: absolute;
+}
+
+#blob-path {
+  height: 100%;
+  fill: #4C566B;
+}
+
+.hamburger {
+  right: 10px;
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  margin-top: -10px;
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  position: absolute;
+}
+
+.menu-the-title {
+  grid-area: controls_title;
+  font-size: 1.5rem;
+  color: whitesmoke;
+}
+
+#line-2 {
+  text-align: right;
+}
+
+.hamburger .line:nth-child(2) {
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger .line:nth-child(3) {
+  bottom: 0;
+}
+
+.menu-grid {
+  text-shadow: 0 1px 1px rgba(47, 53, 66, 0.25),
+    0 2px 2px rgba(47, 53, 66, 0.20),
+    0 4px 4px rgba(47, 53, 66, 0.15),
+    0 8px 8px rgba(47, 53, 66, 0.10),
+    0 16px 16px rgba(47, 53, 66, 0.05);
+    transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
+
+  /* position: relative; */
+  margin-left: 1rem;
+  margin-top: 0.8rem;
+  font-size: 1.27rem;
+  line-height: 1.5em;
+  font-weight: bold;
   fill: rgba(255, 255, 255, 0.7);
+  /* color: rgba(255, 255, 255, 0.7); */
+  /* color: #2f3542; */
+  color: #DAD5D8;
   display: grid;
-  grid-row-gap: 1rem;
   grid-template-areas:
-    "speed_text speed_text"
-    "speed_dec speed_inc";
-  /* justify-content: space-between; */
-  /* justify-content: center; */
-  /* justify-items: center; */
-  justify-items: start;
-  background: grey;
+    "controls_title"
+    "controls_speed"
+    "controls_planes"
+    "controls_mouse"
+    "controls_mouse_depth"
+    "controls_not_secret";
+  grid-gap: 3rem;
+  align-content: space-between;
 }
 
-.speed_controls div svg{
+.menu-grid-bg {
+  /* background: #2f3542; */
+}
+
+.menu-title{
+  text-decoration: underline;
+  font-size: 1.3rem;
+  text-align: left;
+  font-weight: bolder;
+}
+.speed_controls {
+  grid-area: controls_speed;
+  display: grid;
+  grid-row-gap: 0.5rem;
+  grid-template-areas:
+    "speed_text speed_text speed_text"
+    "speed_dec speed_deg speed_inc"
+    "speed_info speed_info speed_info";
+  /* justify-content: space-between; */
+  /* justify-items: center; */
+}
+
+.speed_controls div svg {
   cursor: pointer;
   pointer-events: all;
+  width: 20px;
+  height: 20px;
 }
 
-.speed_title{
+.speed_title {
   grid-area: speed_text;
-  /* text-align: center; */
-  text-align: center;
-  font-family: "Roboto";
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.6rem;
-  line-height: 1.5em;
 }
-
-#speed_degree{
-}
-
-
 
 .decrease_speed {
   grid-area: speed_dec;
@@ -375,65 +444,89 @@ body {
   fill: #5cd3ad;
 }
 
-#speed_degree{
-  grid-area: speed_degree;
-  font-family: "Roboto";
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.7);
+.speed_degree {
+  grid-area: speed_deg;
   font-size: 1.6rem;
+  padding-top: 1.5px;
 }
 
-.dec_color{
+.dec_color {
   color: #e6616b;
 }
 
-.inc_color{
+.inc_color {
   color: #5cd3ad;
 }
 
+.speed_info {
+  grid-area: speed_info;
+  font-size: 1.1rem;
+  margin-top: -0.5rem;
+}
+
 .plane_controls {
-  grid-area: plane_controls;
-  background: blue;
-  fill: rgba(255, 255, 255, 0.7);
+  grid-area: controls_planes;
   display: grid;
-  grid-row-gap: 0.5rem;
+  grid-row-gap: 0.8rem;
   grid-template-areas:
     "plane_title plane_title"
-    "xy_plane xy_icon"
-    "yz_plane yz_icon"
-    "xz_plane xz_icon";
-  /* justify-content: space-between; */
-  /* justify-content: center; */
+    "xy_icon xy_plane"
+    "xz_icon xz_plane"
+    "yz_icon yz_plane"
+    "plane_info plane_info";
   align-items: end;
-  justify-items: start;
+  /* justify-items: center; */
+  /*   justify-content: center; */
+  /* fill: #f5c156; */
 }
 
 .plane_title {
   grid-area: plane_title;
-  text-align: center;
-  font-family: "Roboto";
-  font-weight: bold;
+  /* text-align: center; */
+  /* font-family: "Roboto"; */
+  /* font-weight: bold; */
   color: rgba(255, 255, 255, 0.7);
-  font-size: 1.6rem;
-  line-height: 1.5em;
-  margin-bottom: .5rem;
+  /* font-size: 1.21rem; */
+  /* line-height: 1.5em; */
+  /* margin-bottom: 0.5rem; */
 }
 
-.plane_controls span{
+.plane_controls span {
   font-family: "Roboto";
   font-weight: bolder;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.5rem;
-  line-height: 1.5em;
+  /* color: rgba(255, 255, 255, 0.7); */
+  /* 	  font-size: 1.5rem; */
+  /* line-height: 1.5em; */
+  justify-self: start;
 }
 
-.plane_controls svg, .plane_controls span{
+.plane_controls svg,
+.plane_controls span {
   cursor: pointer;
   pointer-events: all;
+  transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.plane_controls svg:hover{
+
+.scale_one_and_a_half {
+  transform: scale(1.5, 1.5);
+}
+
+.plane_controls svg:active {
+  /* transform: scale(1.5,1.5); */
+}
+
+.plane_controls span:hover {
+  color: #f5c156;
+}
+
+.plane_controls svg:hover {
   fill: #f5c156;
+}
+
+.plane-active {
+  color: #f5c156;
+  fill: #f5c156 !important;
 }
 
 .xy_text {
@@ -458,6 +551,165 @@ body {
 
 .xz_icon {
   grid-area: xz_icon;
+}
+
+.plane_info {
+  grid-area: plane_info;
+  font-size: 1.1rem;
+  margin-top: -0.5rem;
+  /* margin-top: -0.5rem; */
+  /* justify-self: start; */
+
+}
+
+.mouse_controls {
+  grid-area: controls_mouse;
+  display: grid;
+  grid-row-gap: 0.8rem;
+  grid-template-areas:
+    "mouse_title mouse_title"
+    "center_icon center_rot "
+    "mouse_icon mouse_rot";
+  align-items: center;
+  /* justify-items: center; */
+}
+
+.mouse_controls span {
+  justify-self: start;
+  cursor: pointer;
+  pointer-events: all;
+  margin-left: -10px;
+}
+
+.mouse_controls svg {
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.mouse_controls svg,
+.mouse_controls span {
+  transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
+}
+.mouse_controls span:hover {
+  color: #C678DD;
+}
+
+.mouse_controls svg:hover {
+  fill: #C678DD;
+}
+.mouse_title {
+  grid-area: mouse_title;
+  justify-self: start;
+}
+
+.center_icon {
+  grid-area: center_icon;
+}
+
+.center_rot {
+  grid-area: center_rot;
+}
+
+.mouse_icon {
+  grid-area: mouse_icon;
+}
+
+.mouse_rot {
+  grid-area: mouse_rot;
+}
+
+.around-active {
+  color: #C678DD;
+  fill: #C678DD !important;
+}
+
+.controls_mouse {
+  grid-area: controls_mouse_depth;
+  display: grid;
+  grid-template-areas:
+    "mouse_title mouse_title"
+    "depth_on_icon depth_on_text"
+    "depth_off_icon depth_off_text"
+    "mouse_info mouse_info";
+  grid-row-gap: 0.8rem;
+  align-items: center;
+}
+
+
+.mouse_title {
+  grid-area: mouse_title;
+}
+
+
+.controls_mouse svg {
+  width: 20px;
+  height: 20px;
+}
+
+.depth_on {
+  fill: #5cd3ad;
+  color: #5cd3ad;
+
+}
+
+.depth_off {
+  fill: #e6616b;
+  color: #e6616b;
+}
+
+
+.controls_mouse svg,
+.controls_mouse span {
+  cursor: pointer;
+  transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.depth_on_icon {
+  grid-area: depth_on_icon;
+}
+.depth_on_icon:hover{
+  fill: #5cd3ad;
+}
+.depth_on_text {
+  grid-area: depth_on_text;
+}
+.depth_on_text:hover{
+  color: #5cd3ad;
+}
+
+.depth_off_icon {
+  grid-area: depth_off_icon;
+}
+.depth_off_icon:hover{
+  fill: #e6616b;
+}
+
+.depth_off_text {
+  grid-area: depth_off_text;
+}
+.depth_off_text:hover{
+  color: #e6616b;
+}
+
+.mouse_info {
+  grid-area: mouse_info;
+  font-size: 1.1rem;
+  margin-top: -0.5rem;
+}
+
+
+.controls_mouse_disable{
+  opacity: 0.5;
+  cursor: none;
+  pointer-events: none;
+}
+
+.not_secret {
+  position: absolute;
+  grid-area: controls_not_secret;
+  margin-bottom: 1.2rem;
+  font-size: 1.25rem;
+  bottom: 0;
 }
 
 /*  */
@@ -1485,6 +1737,7 @@ a.bttn-dark:focus {
 
   .pr_techn div {
     font-size: 1.2rem;
+    white-space: pre-line;
   }
 }
 
