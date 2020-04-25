@@ -377,7 +377,7 @@ opacity: 0;
   0 8px 8px rgba(47, 53, 66, 0.10),
   0 16px 16px rgba(47, 53, 66, 0.05);
   transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
-
+height: 100%;
   /* position: relative; */
   margin-left: 1rem;
   margin-top: 0.8rem;
@@ -390,7 +390,7 @@ opacity: 0;
   color: rgba(255, 255, 255, 0.7);
 
   display: grid;
-  /* grid-template-rows: auto repeat(auto-fit, minmax(170px, 1fr)); */
+  grid-template-rows: auto repeat(auto-fit, minmax(170px, 1fr));
   grid-template-areas:
     "controls_title"
     "controls_speed"
@@ -398,16 +398,20 @@ opacity: 0;
     "controls_mouse"
     "controls_mouse_depth"
     "controls_not_secret";
-  grid-gap: 4rem;
+  /* grid-gap: 4rem; */
   align-content: space-between;
+  /* align-items: center; */
   /* align-items: end; */
   /* justify-content: start; */
 }
 .menu-grid div {
   /* height: max-content; */
+  /* margin: 2px 0; */
 }
 .menu-grid-bg {
   /* background: #2f3542; */
+  /* margin: 2rem 0; */
+
 }
 
 .menu-title{
@@ -718,7 +722,7 @@ opacity: 0;
 }
 
 .not_secret {
-  position: absolute;
+  /* position: absolute; */
   grid-area: controls_not_secret;
   margin-bottom: 2.2rem;
   font-size: 1.25rem;
@@ -1055,7 +1059,7 @@ a.bttn-dark:focus {
   display: grid;
   height: calc(100vh - 50.75px);
   width: 100vw;
-  grid-template-columns: 12rem auto 12rem;
+  grid-template-columns: 13rem auto 13rem;
   /* grid-template-rows: repeat(3,1fr); */
   grid-template-rows: 10rem auto;
   grid-template-areas:
@@ -1189,7 +1193,7 @@ a.bttn-dark:focus {
   height: calc(100vh - 50.75px);
   width: 100vw;
   grid-row-gap: 3rem;
-  grid-template-columns: 12rem auto 12rem;
+  grid-template-columns: 13rem auto 13rem;
   grid-template-rows: 10rem auto;
   grid-template-areas:
     ". section3_title ."
@@ -1259,6 +1263,7 @@ a.bttn-dark:focus {
   position: relative;
   /* bottom: 0; */
   grid-area: arrows;
+  pointer-events: all;
 }
 
 .glide__arrow--left {
@@ -1275,6 +1280,8 @@ a.bttn-dark:focus {
   grid-area: arrows;
   /* position: relative; */
   /* justify-content: center; */
+  pointer-events: all;
+
 }
 
 .project_showcase {
@@ -1494,7 +1501,7 @@ a.bttn-dark:focus {
   display: grid;
   height: calc(100vh - 50.75px);
   width: 100vw;
-  grid-template-columns: 12rem auto 12rem;
+  grid-template-columns: 13rem auto 13rem;
   grid-template-rows: 10rem auto;
   grid-template-areas:
     ". section4_title ."

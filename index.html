@@ -616,10 +616,13 @@
       // responsiveHeight: 0,
       // navigarion: true,
       scrollingSpeed: 1200,
-      licenseKey: 'C!23WKA!h2'
+      licenseKey: 'C!23WKA!h2',
+      easing: 'easeInOutCubic',
+      keyboardScrolling: true,
+// fitToSectionDelay: 0
     });
-    // fullpage_api.setAllowScrolling(false);
-    // fullpage_api.setKeyboardScrolling(false);
+    fullpage_api.setAllowScrolling(false);
+    fullpage_api.setKeyboardScrolling(false);
   </script>
 </body>
 
@@ -632,11 +635,15 @@
     type: 'carousel',
     startAt: 1,
     perView: 1,
+    // gap: 20,
+    // peek: 30,
     focusAt: true,
     hoverpause: true,
     bound: true,
     perTouch: 1,
+    keyboard: true,
     animationTimingFunc: 'ease-in',
+    autoplay: 5000
   }).mount();
 </script>
 <script src="../lib/index.js"></script>
