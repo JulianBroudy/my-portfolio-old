@@ -582,6 +582,18 @@
           }
           case "myProjects": {
             switchActiveLinkTo(myProjectsLink);
+            if (sessionStorage.getItem('projectsAlert') != 'wasShown') {
+              Swal.fire({
+                icon: 'info',
+                title: '<h2 style=" line-height: 40px;">Sorry for bothering you again!',
+                html: '<h2 style=" font-size:20px; font-weight: bold; line-height:30px;">Please note that clicking the picture will redirect you to a page full of HD Gif samples.</h2><p style="text-align:left; font-size:18px; font-weight: bold;"><br>Highly recommended :)</p>',
+                width: 380,
+                padding: 20,
+                onClose: function() {
+                  sessionStorage.setItem('projectsAlert', 'wasShown');
+                }
+              });
+            }
             break;
           }
           case "contactMe": {
@@ -631,10 +643,10 @@
       keyboardScrolling: true,
       // fitToSectionDelay: 0
     });
-    if(sessionStorage.getItem('initialAlert') !== 'wasShown'){
-    fullpage_api.setAllowScrolling(false);
-    fullpage_api.setKeyboardScrolling(false);
-  }
+    if (sessionStorage.getItem('initialAlert') !== 'wasShown') {
+      fullpage_api.setAllowScrolling(false);
+      fullpage_api.setKeyboardScrolling(false);
+    }
   </script>
 </body>
 
