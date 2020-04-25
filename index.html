@@ -555,23 +555,20 @@
       anchors: ['home', 'aboutMe', 'myProjects', 'contactMe'],
 
       onLeave: function(origin, destination, direction) {
-        if (sessionStorage.getItem('initialAlert') !== 'wasShown' && destination.index != 0) {
+        // aroundAnchor.depth = false;
+        scrollingDirection = direction == 'down' ? 1 : -1;
+        leavingSection = true;
+
+        if (sessionStorage.getItem('initialAlert') != 'wasShown' && destination.index != 0) {
           return false;
         }
 
-        leavingSection = true;
-        scrollingDirection = direction == 'down' ? 1 : -1;
 
         if (destination.index == 0 && direction == 'up') {
-          homePageShowing = true;
           if (tmsm.isActive()) {
             tmsm.pause();
           }
           timeline2.restart();
-        }
-
-        if (origin.anchor == "home" && destination.anchor != "home") {
-          homePageShowing = false;
         }
 
         switch (destination.anchor) {
@@ -592,20 +589,22 @@
             break;
           }
         }
+        // space.remove(normalEffect);
+        // space.add(scrollingEffect);
 
       },
       afterLoad: function(origin, destination, direction) {
+        // space.pause();
         leavingSection = false;
+        // aroundAnchor.depth = true;
+        // space.remove(scrollingEffect);
+        // space.add(normalEffect);
 
         if (origin.index == 0 && direction == 'down') {
           if (nav.classList.contains('hidden')) {
             nav.classList.remove('hidden');
           }
           tmsm.restart();
-        }
-
-        if (destination.anchor == "home" && origin.anchor != "home") {
-          homePageShowing = true;
         }
 
       },
