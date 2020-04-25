@@ -1926,3 +1926,9 @@ a.bttn-dark:focus {
     /* position: absolute; */
   }
 }
+
+.swal2-styled.swal2-confirm {
+    background-color: #2f3542;
+    color: #fff;
+    font-size: 20px !important;
+  }
