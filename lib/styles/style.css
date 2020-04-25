@@ -49,6 +49,10 @@ body {
   opacity: 0;
 }
 
+.removed{
+  display:none;
+}
+
 .bootstrap-iso #navbarCollapse ul li a {
   color: #d0cabd;
 }
@@ -1820,7 +1824,7 @@ a.bttn-dark:focus {
 
 @media (max-width:540px) {
   .side_container, #menu {
-    visibility: hidden;
+display:none;
   }
 
   .section2__container,
@@ -1839,7 +1843,7 @@ a.bttn-dark:focus {
   }
 
   .pr_ex_link_svg {
-    visibility: hidden;
+display:none;
   }
 
   .pr_title {
@@ -1890,8 +1894,7 @@ a.bttn-dark:focus {
 @media (max-height:580px) {
   .not_secret {
     /* visibility: hidden; */
-    opacity: 0;
-    position: absolute;
+display:none;    position: absolute;
   }
   .section2__container__main p{
     font-size: calc(2.7 * (0.4vmax + 0.4vmin));
@@ -1902,8 +1905,7 @@ a.bttn-dark:focus {
 @media (max-height:500px) {
   .controls_mouse {
     /* visibility: hidden; */
-    opacity: 0;
-    position: absolute;
+display:none;    position: absolute;
   }
 
 }
@@ -1913,8 +1915,7 @@ a.bttn-dark:focus {
 @media (max-height:380px) {
   .mouse_controls {
     /* visibility: hidden; */
-    opacity: 0;
-    position: absolute;
+display:none;    position: absolute;
   }
 }
 
@@ -1922,7 +1923,7 @@ a.bttn-dark:focus {
 @media (max-height:345px) {
   .side_container {
     /* visibility: hidden; */
-    opacity: 0;
+display:none;
     /* position: absolute; */
   }
 }
