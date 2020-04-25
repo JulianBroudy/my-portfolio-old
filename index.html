@@ -534,8 +534,11 @@
         }
       }
     });
+
     new fullpage('#fullpage', {
+
       anchors: ['home', 'aboutMe', 'myProjects', 'contactMe'],
+
       onLeave: function(origin, destination, direction) {
 
         leavingSection = true;
@@ -547,11 +550,9 @@
             tmsm.pause();
           }
           timeline2.restart();
-          timeline.play();
         }
 
         if (origin.anchor == "home" && destination.anchor != "home") {
-          timeline.pause();
           homePageShowing = false;
         }
 
@@ -589,12 +590,6 @@
 
         if (destination.anchor == "home" && origin.anchor != "home") {
           homePageShowing = true;
-          if (needsRestart) {
-            needsRestart = false;
-            timeline.restart();
-          } else if (!timeline.isActive()) {
-            timeline.play();
-          }
         }
 
       },
@@ -643,7 +638,7 @@
     perTouch: 1,
     keyboard: true,
     animationTimingFunc: 'ease-in',
-    autoplay: 5000
+    // autoplay: 5000
   }).mount();
 </script>
 <script src="../lib/index.js"></script>

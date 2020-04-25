@@ -215,8 +215,12 @@ body {
   z-index: 5;
   /* cursor: pointer; */
   pointer-events: none;
-}
 
+}
+.side_container a{
+  background: radial-gradient( rgba(47, 53, 66, 0.5), rgba(47, 53, 66, 0.4), rgba(47, 53, 66, 0.3), rgba(47, 53, 66, 0.2), rgba(47, 53, 66, 0.1), rgba(47, 53, 66, 0), rgba(47, 53, 66, 0), rgba(47, 53, 66, 0), rgba(47, 53, 66, 0), rgba(47, 53, 66, 0));
+
+}
 .side_container__logo {
   /* fill: whitesmoke; */
   fill: rgba(255, 255, 255, 0.7);
@@ -278,6 +282,10 @@ body {
   height: 110px;
   /* background: linear-gradient(135deg, #5cd3ad, #f5c156, #e6616b, #C678DD); */
   background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
+    0 2px 2px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.15);
+
 }
 
 /*  */
@@ -404,14 +412,8 @@ height: 100%;
   /* align-items: end; */
   /* justify-content: start; */
 }
-.menu-grid div {
-  /* height: max-content; */
-  /* margin: 2px 0; */
-}
-.menu-grid-bg {
-  /* background: #2f3542; */
-  /* margin: 2rem 0; */
 
+.menu-grid-bg {
 }
 
 .menu-title{
@@ -422,6 +424,7 @@ height: 100%;
   text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
   color: #DAD5D8;
 }
+
 .speed_controls {
   grid-area: controls_speed;
   display: grid;
@@ -1059,13 +1062,12 @@ a.bttn-dark:focus {
   display: grid;
   height: calc(100vh - 50.75px);
   width: 100vw;
-  grid-template-columns: 13rem auto 13rem;
+  grid-template-columns: 14rem auto 14rem;
   /* grid-template-rows: repeat(3,1fr); */
   grid-template-rows: 10rem auto;
   grid-template-areas:
     ". aboutMe_title ."
-    ". aboutMe_main ."
-    ". aboutMe_footer .";
+    ". aboutMe_main .";
   justify-items: center;
   align-items: center;
 }
@@ -1096,6 +1098,7 @@ a.bttn-dark:focus {
 .title_3d {
   font-size: 5rem;
   line-height: 1em;
+  text-align: center;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-rendering: optimizeLegibility;
@@ -1144,7 +1147,8 @@ a.bttn-dark:focus {
 .section2__container__main p {
   font-family: "Roboto";
   /* font-size: 3rem; */
-  font-size: calc(2.7 * (0.52vw + 0.4vh));
+  font-size: calc(2.7 * (0.5vmax + 0.4vmin));
+  /* font-size: 2vmax; */
   line-height: 1.5em;
   /* filter: invert(100%); */
   color: rgba(208, 202, 189, 1);
@@ -1693,6 +1697,7 @@ a.bttn-dark:focus {
       "pr_techn pr_techn pr_techn";
     /* align-content: start; */
     /* align-items: start; */
+
     grid-gap: 0.5rem;
   }
 
@@ -1830,7 +1835,7 @@ a.bttn-dark:focus {
 }
 
 @media (max-width:540px) {
-  .side_container {
+  .side_container, #menu {
     visibility: hidden;
   }
 
