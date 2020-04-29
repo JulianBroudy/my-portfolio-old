@@ -529,7 +529,6 @@
       anchors: ['home', 'aboutMe', 'myProjects', 'contactMe'],
 
       onLeave: function(origin, destination, direction) {
-        // aroundAnchor.depth = false;
         scrollingDirection = direction == 'down' ? 1 : -1;
         leavingSection = true;
 
@@ -575,16 +574,11 @@
             break;
           }
         }
-        // space.remove(normalEffect);
-        // space.add(scrollingEffect);
 
       },
       afterLoad: function(origin, destination, direction) {
-        // space.pause();
+        activeSection = destination.index;
         leavingSection = false;
-        // aroundAnchor.depth = true;
-        // space.remove(scrollingEffect);
-        // space.add(normalEffect);
 
         if (origin.index == 0 && direction == 'down') {
           if (nav.classList.contains('hidden')) {
