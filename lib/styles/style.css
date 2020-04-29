@@ -220,6 +220,7 @@ body {
   z-index: 5;
   /* cursor: pointer; */
   pointer-events: none;
+  overflow: hidden;
 
 }
 .side_container a{
@@ -831,7 +832,6 @@ height: 100%;
  *
  */
 .section1 {
-  background: #2f3542;
   z-index: 2;
 }
 
@@ -1079,6 +1079,7 @@ a.bttn-dark:focus {
 
 .section2__container__title {
   grid-area: aboutMe_title;
+
 }
 
 .section2__container__title::before {
@@ -1098,6 +1099,7 @@ a.bttn-dark:focus {
   background: linear-gradient(to right, rgba(245, 193, 86, .2) 0%, rgba(42, 31, 25, 0) 65%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5c156', endColorstr='#2a1f19', GradientType=0.2);
   );
+  overflow: hidden;
 }
 
 .title_3d {
@@ -1504,6 +1506,7 @@ a.bttn-dark:focus {
   mask-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
   mask-image: linear-gradient(to bottom, transparent, black);
   background: linear-gradient(135deg, #2f3542, #C678DD);
+  /* cursor: crosshair; */
 }
 
 .section4__container {
@@ -1520,6 +1523,8 @@ a.bttn-dark:focus {
     ". section4_footer .";
   justify-items: center;
   align-items: center;
+  /* cursor: crosshair; */
+
 }
 
 .section4__container__title {
