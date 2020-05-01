@@ -12,6 +12,7 @@ $message = $_POST['message'];
 if(empty($message)||empty($visitor_email))
 {
     echo "Email and message must not be empty!";
+    echo "Try again...";
     exit;
 }
 
