@@ -1,0 +1,440 @@
+body {
+  background-color: #2f3542;
+  font-family: Roboto, sans-serif;
+  color: #e8e8e8;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 38px;
+  line-height: 44px;
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: bold;
+}
+
+.section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  /* Section 3 in webflow */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.section-title {
+	margin-bottom: 40px;
+}
+
+.swiper-container {
+    /* width: 600px; */
+    /* height: 300px; */
+    /* height: 100%; */
+}
+
+.swiper-pagination{
+  /* margin-top: 10px; */
+}
+
+/***
+ *       _____           _   _               __
+ *      / ____|         | | (_)             /_ |
+ *     | (___   ___  ___| |_ _  ___  _ __    | |
+ *      \___ \ / _ \/ __| __| |/ _ \| '_ \   | |
+ *      ____) |  __/ (__| |_| | (_) | | | |  | |
+ *     |_____/ \___|\___|\__|_|\___/|_| |_|  |_|
+ *
+ *
+ */
+.section-1 {
+  width: 100vw;
+  position: relative;
+  background: rgba(255, 0, 0, 0.2);
+}
+
+.slider {
+	width: 100%;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	background-color: transparent;
+}
+
+
+.slide {
+	/* width: 100%; */
+	height: 100%;
+	/* padding-bottom: 50px; */
+}
+
+.slide-nav {
+	background-color: #ba9696;
+}
+
+
+.left-arrow {
+	margin-left: -65px;
+	background-color: transparent;
+}
+
+.right-arrow {
+	margin-right: -65px;
+}
+
+.project-grid {
+  background: blue;
+  /* margin: 0 140px; */
+  display: -ms-grid;
+  display: grid;
+  /* width: 100%; */
+  /* height: 100%; */
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  justify-items: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
+  grid-auto-flow: row;
+  grid-auto-columns: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-template-areas: ".";
+  -ms-grid-columns: -webkit-min-content 10px auto 10px -webkit-min-content;
+  -ms-grid-columns: min-content 10px auto 10px min-content;
+  grid-template-columns: -webkit-min-content auto -webkit-min-content;
+  grid-template-columns: min-content auto min-content;
+  -ms-grid-rows: min-content 10px minmax(min-content, auto) 10px auto;
+  grid-template-rows: -webkit-min-content minmax(-webkit-min-content, auto) auto;
+  grid-template-rows: min-content minmax(min-content, auto) auto;
+}
+
+.project-title {
+  font-size: 3.5vw;
+  white-space: nowrap;
+  -webkit-align-self: start;
+  -ms-flex-item-align: start;
+  -ms-grid-row-align: start;
+  align-self: start;
+  -ms-grid-column-align: start;
+  justify-self: start;
+}
+
+.project-image {
+  background-image: url(http://127.0.0.1:3000/lib/v2/images/gcm-system.png);
+  background-position: 100% 0%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -o-object-fit: fill;
+  object-fit: fill;
+  -ms-grid-column-span: 2;
+  grid-column-end: 4;
+  -ms-grid-column: 2;
+  grid-column-start: 2;
+  -ms-grid-row-span: 3;
+  grid-row-end: 4;
+  -ms-grid-row: 1;
+  grid-row-start: 1;
+  -ms-grid-row-align: stretch;
+  align-self: stretch;
+  -ms-grid-column-align: stretch;
+  justify-self: stretch;
+}
+
+.project-description {
+  position: relative;
+  padding: 14px 14px 4px;
+  background-color: hsla(0, 0%, 91%, 0.8);
+  color: #2f3542;
+  font-size: 1.5vw;
+  line-height: 1.5;
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+  -ms-grid-column-span: 2;
+  grid-column-end: 3;
+  -ms-grid-row: 2;
+  grid-row-start: 2;
+  -ms-grid-row-span: 1;
+  grid-row-end: 3;
+}
+
+.project-paragraph {
+  height: auto;
+  max-width: 659.6784057617188vw;
+}
+
+.project-technologies-grid {
+  position: static;
+  overflow: hidden;
+  margin-left: 10px;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  justify-items: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
+  grid-auto-flow: column dense;
+  grid-auto-columns: minmax(60px, 1fr);
+  grid-auto-rows: minmax(30px, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  -ms-grid-rows: minmax(30px, 1fr) minmax(30px, 1fr) minmax(30px, 1fr);
+  grid-template-rows: minmax(30px, 1fr) minmax(30px, 1fr) minmax(30px, 1fr);
+  font-size: 1.3vw;
+  text-align: center;
+  -o-object-fit: fill;
+  object-fit: fill;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
+  align-self: stretch;
+  -ms-grid-column-align: stretch;
+  justify-self: stretch;
+
+  -webkit-box-pack: justify;
+-webkit-justify-content: space-between;
+-ms-flex-pack: justify;
+justify-content: space-between;
+justify-items: stretch;
+-webkit-align-content: space-between;
+-ms-flex-line-pack: justify;
+align-content: space-between;
+grid-auto-flow: row;
+grid-auto-columns: minmax(80px, 1fr);
+grid-auto-rows: minmax(40px, 1fr);
+grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+grid-template-rows: repeat(auto-fit, minmax(40px, 1fr));
+
+}
+
+.project-technology {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #a32929;
+  color: #e8e8e8;
+  -ms-grid-row-align: stretch;
+  align-self: stretch;
+  -ms-grid-column-align: stretch;
+  justify-self: stretch;
+}
+
+/***
+ *       _____           _   _               ___
+ *      / ____|         | | (_)             |__ \
+ *     | (___   ___  ___| |_ _  ___  _ __      ) |
+ *      \___ \ / _ \/ __| __| |/ _ \| '_ \    / /
+ *      ____) |  __/ (__| |_| | (_) | | | |  / /_
+ *     |_____/ \___|\___|\__|_|\___/|_| |_| |____|
+ *
+ *
+ */
+.section-2 {
+  background: green;
+}
+
+.section-3 {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.section-4 {
+  background: blue;
+}
+
+/***
+ *                __  __            _  _
+ *        ____   |  \/  |          | |(_)
+ *       / __ \  | \  / |  ___   __| | _   __ _
+ *      / / _` | | |\/| | / _ \ / _` || | / _` |
+ *     | | (_| | | |  | ||  __/| (_| || || (_| |
+ *      \ \__,_| |_|  |_| \___| \__,_||_| \__,_|
+ *       \____/
+ *
+ */
+@media screen and (min-width: 1440px) {
+  .project-technologies-grid {
+    overflow: hidden;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    justify-items: stretch;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-align-content: end;
+    -ms-flex-line-pack: end;
+    align-content: end;
+    grid-auto-flow: column dense;
+    grid-auto-columns: minmax(100px, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    -ms-grid-rows: minmax(30px, 1fr) minmax(30px, 1fr) minmax(30px, 1fr);
+    grid-template-rows: minmax(30px, 1fr) minmax(30px, 1fr) minmax(30px, 1fr);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .project-grid {
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    grid-row-gap: 10px;
+    -ms-grid-columns: minmax(-webkit-min-content, 22vw) minmax(auto, 5fr) 1fr;
+    -ms-grid-columns: minmax(min-content, 22vw) minmax(auto, 5fr) 1fr;
+    grid-template-columns: minmax(-webkit-min-content, 22vw) minmax(auto, 5fr) 1fr;
+    grid-template-columns: minmax(min-content, 22vw) minmax(auto, 5fr) 1fr;
+    -ms-grid-rows: minmax(auto, -webkit-min-content) auto minmax(auto, -webkit-min-content);
+    -ms-grid-rows: minmax(auto, min-content) auto minmax(auto, min-content);
+    grid-template-rows: minmax(auto, -webkit-min-content) auto minmax(auto, -webkit-min-content);
+    grid-template-rows: minmax(auto, min-content) auto minmax(auto, min-content);
+  }
+
+  .project-title {
+    position: relative;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 3;
+    grid-column-end: 4;
+    -ms-grid-row: 1;
+    grid-row-start: 1;
+    -ms-grid-row-span: 1;
+    grid-row-end: 2;
+    -ms-grid-row-align: start;
+    align-self: start;
+    -ms-grid-column-align: start;
+    justify-self: start;
+  }
+
+  .project-description {
+    font-size: 1.5vw;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 3;
+    grid-column-end: 4;
+    -ms-grid-row: 2;
+    grid-row-start: 2;
+    -ms-grid-row-span: 1;
+    grid-row-end: 3;
+  }
+
+  .project-technologies-grid {
+    overflow: visible;
+    margin-right: 0px;
+    margin-left: 0px;
+    justify-items: stretch;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    -ms-grid-rows: minmax(30px, -webkit-min-content) minmax(30px, -webkit-min-content);
+    -ms-grid-rows: minmax(30px, min-content) minmax(30px, min-content);
+    grid-template-rows: minmax(30px, -webkit-min-content) minmax(30px, -webkit-min-content);
+    grid-template-rows: minmax(30px, min-content) minmax(30px, min-content);
+    -o-object-fit: fill;
+    object-fit: fill;
+    -ms-grid-row: 3;
+    grid-row-start: 3;
+    -ms-grid-row-span: 1;
+    grid-row-end: 4;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 3;
+    grid-column-end: 4;
+    -ms-grid-row-align: auto;
+    align-self: auto;
+    -ms-grid-column-align: auto;
+    justify-self: auto;
+  }
+
+  .project-image {
+    -ms-grid-row-span: 2;
+    grid-row-end: 3;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .project-description {
+    background-color: hsla(0, 0%, 91%, 0.9);
+    font-size: 13px;
+  }
+
+  .project-technologies-grid {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    justify-items: stretch;
+    -webkit-align-content: space-between;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+    grid-auto-flow: row;
+    grid-auto-columns: minmax(80px, 1fr);
+    grid-auto-rows: minmax(40px, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(40px, 1fr));
+  }
+
+  .project-title {
+    font-size: 3vw;
+  }
+}
