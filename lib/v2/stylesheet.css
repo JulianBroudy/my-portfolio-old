@@ -1,3 +1,5 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Raleway:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap'); */
+
 /***
  *         _
  *      /\| |/\
@@ -7,23 +9,36 @@
  *      \/|_|\/
  *
  */
+
+ :root {
+   --def-background: #2F3542;
+   --green: #5CD3AD;
+   --orange: #F5C156;
+   --red: #E6616B;
+   --purple: #C678DD;
+   --white-ish: #E8E8E8;
+
+   --h1-font-size: calc(15px + (30 - 15) * ((100vw - 478px) / (1600 - 300)));
+
+ }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  height: 100%
+  height: 100%;
 }
 
 body {
   font-family: Roboto, sans-serif;
-  color: #333;
+  /* color: #333; */
   font-size: 2.5vw;
-  font-size: calc(15px + (30 - 15) * ((100vw - 478px) / (1600 - 300)));
+  font-size: var(--h1-font-size);
   line-height: 1.5;
   font-weight: 400;
   margin: 0
@@ -39,6 +54,13 @@ h2 {
   margin-top: 20px;
   margin-bottom: 10px;
   text-align: center;
+}
+
+h1,h2{
+  -webkit-transition: font-size .2s;
+   -moz-transition: font-size .2s;
+     -o-transition: font-size .2s;
+        transition:font-size .2s;
 }
 
 .j-fullpage {
@@ -148,7 +170,6 @@ h2 {
   white-space: nowrap;
 }
 
-
 .hero-center {
   display: -webkit-box;
   display: -webkit-flex;
@@ -195,12 +216,28 @@ h2 {
 }
 
 .hero-span {
+  text-shadow: none;
   font-family: Raleway, sans-serif;
+  font-weight: bold;
+  background-image: -webkit-linear-gradient(135deg, #5cd3ad, #f5c156, #e6616b, #C678DD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #e8e8e8;
+  position: relative;
+  z-index: 0;
+}
+
+.hero-span::after {
+  background: none;
+  content: attr(data-text);
+  left: 0;
+  position: absolute;
+  text-shadow: -1px 3px 4px #000;
+  z-index: -1;
 }
 
 .hero-button {
   margin-bottom: 20px;
-  z-index: 2;
   display: inline-block;
   color: #e8e8e8;
   font-weight: normal;
