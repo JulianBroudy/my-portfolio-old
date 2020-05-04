@@ -50,15 +50,44 @@
   </script>
   <!-- Local -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+  <link rel="stylesheet" href="../lib/styles/fullpage.css" />
   <link rel="stylesheet" href="../lib/v2/baseStyles.css" />
   <link rel="stylesheet" href="../lib/v2/stylesheet.css" />
-  <link rel="stylesheet" href="../lib/styles/fullpage.css" />
 
 </head>
 
 
 <body>
-
+  <div id="fullpage" class="j-fullpage">
+    <div id="section-1" class="section hero-section">
+      <h1 class="quote">- As you sow, so shall you reap. -</h1>
+      <div class="hero-center">
+        <h1 class="hero-text">Hi, I am curious <span class="hero-span">Julian</span>.</h1>
+        <h1 class="hero-text">Also, I am a software engineer.</h1>
+      </div>
+      <a href="#" class="hero-button">
+        <span></span><span></span><span></span>Tell me more
+      </a>
+    </div>
+    <div id="section-2" class="section">
+      <div class="section-content-wrapper">
+        <h2 class="section-title">Heading</h2>
+        <div class="swiper-container"></div>
+      </div>
+    </div>
+    <div id="section-3" class="section">
+      <div class="section-content-wrapper">
+        <h2 class="section-title">Heading</h2>
+        <div class="swiper-container"></div>
+      </div>
+    </div>
+    <div id="section-4" class="section">
+      <div class="section-content-wrapper">
+        <h2 class="section-title">Heading</h2>
+        <div class="swiper-container"></div>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -68,6 +97,7 @@
       autoScrolling: true,
       dragAndMove: true,
       scrollingSpeed: 1200,
+      verticalCentered: false,
       licenseKey: 'C!23WKA!h2',
       easing: 'easeInOutCubic',
       keyboardScrolling: true,
