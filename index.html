@@ -51,10 +51,11 @@
   </script>
   <!-- Local -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pts/0.9.4/pts.min.js" integrity="sha256-99k62/xTpzBhHw1356o9GPyWMXJYET5lKUxOPUi3Vrk=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pts/0.9.5/pts.min.js" integrity="sha512-cE6v1dThiaCYgfCJH2aujwMEFhjoFtEE77Ztc5D5jyg9DRF32BMObBjS3JaJac80wiTli8ERScHOtJ8MOhlNBg==" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../lib/v2/baseStyles.css" />
   <link rel="stylesheet" href="../lib/v2/stylesheet.css" />
   <link rel="stylesheet" href="../lib/styles/fullpage.css" />
+  <link rel="stylesheet" href="../lib/styles/bootstrap-iso.css">
 </head>
 
 
@@ -97,9 +98,9 @@ var(--purple)
 );
     </canvas> -->
 
-  <!-- <div id="pts"></div> -->
 
   <div id="fullpage" class="j-fullpage">
+    <!-- <div id="overlay"></div> -->
     <div id="overlay"></div>
     <div id="section-1" class="section hero-section">
       <h1 class="quote">- As you sow, so shall you reap. -</h1>
@@ -113,7 +114,10 @@ var(--purple)
     </div>
     <div id="section-2" class="section">
       <div class="section-content-wrapper">
-        <h2 class="section-title">About</h2>
+        <div class="text-box">
+          bla bnla bla bla bn la
+        </div>
+        <!-- <h2 class="section-title">About</h2> -->
         <div class="swiper-container"></div>
       </div>
     </div>
@@ -130,8 +134,43 @@ var(--purple)
       </div>
     </div>
   </div>
+
+  <div class="bootstrap-iso ">
+
+    <!-- Navigation Bar -->
+    <nav id="myNavbar" class="navbar hidden navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="container">
+        <!-- Menu responsivo -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <!-- Logo -->
+          <a class="navbar-brand myLogo" href="#home">Julian<span>Broudy</span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="nav navbar-nav navbar-right shadow-none">
+            <li><a id="home-link" href="#home">Home</a></li>
+            <li><a id="aboutMe-link" href="#aboutMe">About</a></li>
+            <li><a id="myProjects-link" href="#myProjects">Projects</a></li>
+            <li><a id="contactMe-link" href="#contactMe">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+
+
+
+
   <script type="text/javascript">
-    let fullPage_wrapper = document.getElementById("fullpage");
+    const nav = document.querySelector("#myNavbar");
+    var currentSection;
     new fullpage('#fullpage', {
       anchors: ['home', 'aboutMe', 'myProjects', 'contactMe'],
       autoScrolling: true,
@@ -143,12 +182,46 @@ var(--purple)
       keyboardScrolling: true,
       // normalScrollElements: '#overlay',
       onLeave: function(origin, destination, direction) {
-        let newPosition = destination.item.offsetTop;
-        docStyle.setProperty('--overlay-position',  Math.round(newPosition)+'px')
+        currentSection = destination;
+        let newPosition = currentSection.item.offsetTop;
+        docStyle.setProperty('--overlay-position', Math.round(newPosition) + 'px');
+        switch (destination.anchor) {
+          case "home": {
+            switchActiveLinkTo(homeLink);
+            nav.classList.add('hidden');
+            break;
+          }
+          case "aboutMe": {
+            switchActiveLinkTo(aboutMeLink);
+            break;
+          }
+          case "myProjects": {
+            switchActiveLinkTo(myProjectsLink);
+            break;
+          }
+          case "contactMe": {
+            switchActiveLinkTo(contactMeLink);
+            break;
+          }
+        }
       },
+      afterLoad: function(origin, destination, direction) {
+        activeSection = destination.index;
+        leavingSection = false;
+
+        if (origin.index == 0 && direction == 'down') {
+          if (nav.classList.contains('hidden')) {
+            nav.classList.remove('hidden');
+          }
+        }
+
+      },
+
 
     });
   </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
   <!-- <script src="https://unpkg.com/swiper/js/swiper.min.js"></script> -->
   <script>
     var mySwiper = new Swiper('.swiper-container', {
@@ -185,5 +258,7 @@ var(--purple)
   </script>
 </body>
 <script src="../lib/v2/canvas.js"></script>
+<script src="../lib/index.js"></script>
+
 
 </html>
